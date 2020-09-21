@@ -84,6 +84,7 @@ async def on_message(message):
 				await message.channel.send(file=discord.File(path + "/data" + ext))
 			elif err == "OKVID":
 				await message.channel.send(file=discord.File(path + "/data" + ext + ".mp4"))
+			#delete all files in ./resources
 			shutil.rmtree(path, ignore_errors=True)
 		else:
 			await message.channel.send("No input file")
